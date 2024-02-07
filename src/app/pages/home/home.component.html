@@ -1,0 +1,64 @@
+<section class="vh-100" style="background-color: #3da2c3;">
+    <div class="container py-5 h-100 w-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-8 col-xl-6">
+                <div class="card rounded-3">
+                    <div class="card-body p-4">
+
+                        <p class="mb-2 text-center">
+                            <span class="h2 me-2">
+                                <i class="lni lni-check-box" style="size:70px"></i>
+                                PDF Maker
+                            </span>
+                        </p>
+                        <hr>
+
+                        <div class="row">
+                            <div class="card w-50">
+                                <div class="card-body">
+                                    <h5 class="card-title">Customer Detail</h5>
+                                    <hr>
+                                    <div class="row">
+                                        <form [formGroup]="userDetails">
+                                            <div class="col-md-12">
+                                                <label>Name</label>
+                                                <input type="text" class="form-control" formControlName="name">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Address</label>
+                                                <textarea type="text" class="form-control" rows="3" formControlName="address"></textarea>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Email</label>
+                                                <input type="text" class="form-control" formControlName="email">
+                                            </div>
+                                            <div class="col-md-12">
+                                                <label>Phone</label>
+                                                <input type="text" class="form-control" formControlName="phone">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card w-50">
+                                <div class="card-body">
+                                    <h5 class="card-title">Actions</h5>
+                                    <hr>
+                                    <button class="btn btn-success" (click)="generatePDF()">Generate PDF</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="divider d-flex align-items-center my-4"></div>
+                        <p class="text-center mx-3 mb-0" style="color: #a2aab7;">Designed and developed by Ismael Chavez
+                            © 2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
