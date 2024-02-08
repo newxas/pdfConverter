@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  generatePDF() {
+  generatePDF(txt: string) {
     let docDefinition = {
       content: [
         {
@@ -125,7 +125,13 @@ export class HomeComponent implements OnInit {
         }
       }
     }
-    pdfMake.createPdf(docDefinition).open();
-
+    if (txt === 'Generate')
+    {
+      pdfMake.createPdf(docDefinition).open();
+    }
+    else if (txt === 'Download')
+    {
+      pdfMake.createPdf(docDefinition).download();
+    }
   }
 }

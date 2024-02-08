@@ -1,4 +1,4 @@
-<section class="vh-100" style="background-color: #3da2c3;">
+<section class="vh-100" style="background-color: #ff3860;">
     <div class="container py-5 h-100 w-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-8 col-xl-6">
@@ -44,11 +44,18 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Actions</h5>
                                     <hr>
-                                    <button class="btn btn-success" (click)="generatePDF()">Generate PDF</button>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-primary" (click)="generatePDF('Generate')">Generate Pdf</button>
+                                    </div>
+                                    <br>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-dark" (click)="generatePDF('Download')">Download Pdf</button>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-1">
                             <div class="card w-100">
                                 <div class="card-body">
                                     <h5 class="card-title">Order Details
