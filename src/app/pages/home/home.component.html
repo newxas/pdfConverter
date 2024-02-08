@@ -48,6 +48,49 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="card w-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Order Details
+
+                                        <button type="button"
+                                            class="btn btn-secondary" (click)="addProduct()">+</button>
+                                    </h5>
+                                    
+                                    <hr>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="25%">Product</th>
+                                                <th width="25%">Price</th>
+                                                <th width="25%">Quantity</th>
+                                                <th width="25%">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>   
+                                            <tr *ngFor="let p of products; let i=index">
+                                                <td scope="row">
+                                                    <input type="text" class="form-control" name="productName{{i}}"
+                                                        id="productName" [(ngModel)]="p.name" #ProductName="ngModel"
+                                                        required>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="price{{i}}" id="price"
+                                                        [(ngModel)]="p.price" #ProductPrice="ngModel" required>
+                                                </td>
+                                                <td>
+                                                    <input type="number" class="form-control" name="quantity{{i}}" id="quantity"
+                                                        [(ngModel)]="p.qty" #ProductQty="ngModel" required>
+                                                </td>
+                                                <td>
+                                                    {{p.price * p.qty || ''}}
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
 
 
