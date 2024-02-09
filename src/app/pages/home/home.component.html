@@ -23,18 +23,30 @@
                                             <div class="col-md-12">
                                                 <label>Name</label>
                                                 <input type="text" class="form-control" formControlName="name">
+                                                <div>
+                                                    <small *ngIf="userDetails.controls?.['name']?.errors" class="text-danger">Name is a required field.</small>
+                                                </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <label>Address</label>
                                                 <textarea type="text" class="form-control" rows="3" formControlName="address"></textarea>
+                                                <div>
+                                                    <small *ngIf="userDetails.controls?.['address']?.errors" class="text-danger">address is a required field.</small>
+                                                </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <label>Email</label>
                                                 <input type="text" class="form-control" formControlName="email">
+                                                <div>
+                                                    <small *ngIf="userDetails.controls?.['email']?.errors" class="text-danger">email is a required field.</small>
+                                                </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <label>Phone</label>
                                                 <input type="text" class="form-control" formControlName="phone">
+                                                <div>
+                                                    <small *ngIf="userDetails.controls?.['phone']?.errors" class="text-danger">phone is a required field.</small>
+                                                </div>
                                             </div>
                                         </form>
                                     </div>
@@ -45,11 +57,11 @@
                                     <h5 class="card-title">Actions</h5>
                                     <hr>
                                     <div class="d-flex align-items-center">
-                                        <button class="btn btn-primary" (click)="generatePDF('Generate')">Generate Pdf</button>
+                                        <button class="btn btn-primary" (click)="userDetails.valid ? generatePDF('Generate'): ''">Generate Pdf</button>
                                     </div>
                                     <br>
                                     <div class="d-flex align-items-center">
-                                        <button class="btn btn-dark" (click)="generatePDF('Download')">Download Pdf</button>
+                                        <button class="btn btn-dark" (click)="userDetails.valid ? generatePDF('Download') : ''">Download Pdf</button>
                                     </div>
 
                                 </div>

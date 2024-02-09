@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 var pdfMake = require('pdfmake/build/pdfmake.js');
 var pdfFonts = require('pdfmake/build/vfs_fonts.js');
@@ -27,10 +27,10 @@ export class HomeComponent implements OnInit {
   }
 
   userDetails = new FormGroup({
-    name: new FormControl(''),
-    address: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl('')
+    name: new FormControl('',Validators.required),
+    address: new FormControl('',Validators.required),
+    email: new FormControl('',Validators.required),
+    phone: new FormControl('',Validators.required)
   });
 
 
@@ -127,11 +127,11 @@ export class HomeComponent implements OnInit {
     }
     if (txt === 'Generate')
     {
-      pdfMake.createPdf(docDefinition).open();
+       pdfMake.createPdf(docDefinition).open();
     }
     else if (txt === 'Download')
     {
-      pdfMake.createPdf(docDefinition).download();
+       pdfMake.createPdf(docDefinition).download();
     }
   }
 }
